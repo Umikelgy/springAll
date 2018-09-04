@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+<bean id="hw" class="peson.SayH">
+    <property name="name" value="IIKLT"></property>
+</bean>
+<bean id="car" class="peson.Car">
+    <constructor-arg name="brand" value="jieda" index="0"/>
+    <constructor-arg index="1" value="lgyTT" name="corp"/>
+    <constructor-arg name="maxSpeed" index="2">
+        <value><![CDATA[343]]></value>
+    </constructor-arg>
+</bean>
+    <bean id="person1" class="peson.Person">
+        <property name="name" value="LiHua"/>
+        <property name="age" value="28"/>
+        <property name="car" ref="car"/>
+    </bean>
+    <bean id="person2" class="peson.Person">
+        <property name="name" value="ZhaoHua"/>
+        <property name="age" value="29"/>
+        <property name="car">
+            <ref bean="car"/>
+        </property>
+    </bean>
+
+    <!--内部bean,不能被外部引用，只能在内部使用-->
+    <bean id="person3" class="peson.Person">
+        <property name="name" value="LiSi"/>
+        <property name="age" value="31"/>
+        <property name="car">
+            <bean class="peson.Car">
+                <constructor-arg name="brand" value="Ford"/>
+                <constructor-arg name="corp" value="ShangHai"/>
+                <constructor-arg name="price" value="20000"/>
+            </bean>
+        </property>
+    </bean>
+    <bean id="person4" class="peson.Person">
+        <constructor-arg name="name" value="Jerry"/>
+        <constructor-arg name="age" value="25"/>
+        <constructor-arg name="car" ref="car"/>
+    </bean>
+
+    <!--测试null值-->
+    <bean id="person5" class="peson.Person">
+        <constructor-arg name="name" value="John"/>
+        <constructor-arg name="age" value="31"/>
+        <constructor-arg name="car"><null/></constructor-arg>
+    </bean>
+
+    <!--级联属性赋值,需要对相应的属性提供setter方法。注意：属性需要先初始化以后再为级联属性赋值-->
+   <!--<bean id="person6" class="peson.Person">
+        <constructor-arg name="name" value="Linda"/>
+        <constructor-arg name="age" value="33"/>
+       <constructor-arg name="car" ref="car"/>
+       <property name="car.maxSpeed" value="240"/>
+    </bean>-->
+    <!-- list集合属性-->
+    <bean id="person7" class="peson.Person">
+        <property name="name" value="myname"/>
+        <property name="age" value="22"/>
+        <property name="car" >
+            <list>
+                <bean class="peson.Car">
+
+                    <constructor-arg index="0" type="java.lang.String" value="jieda"/>
+                    <constructor-arg index="1" type="java.lang.String" value="hangzhou"/>
+                    <constructor-arg index="2" type="int" value="234412"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+    <util:list id="cars">
+        <ref bean="car"/>
+        <ref bean="car"/>
+    </util:list>
+    <bean id="person8" class="peson.Person">
+       <constructor-arg name="name" value="lgyTT"/>
+        <constructor-arg name="age" value="22"/>
+        <constructor-arg name="car" ref="cars"/>
+
+    </bean>
+
+    <!--properties属性-->
+    <bean id="datasoure" class="data.DataSoure">
+        <property name="properties">
+            <props>
+                <prop key="use">root</prop>
+                <prop key="password">1234</prop>
+                <prop key="driver">com.mysql.jdbc.Driver</prop>
+                <prop key="url">jdbc:mysql://localhost:3306/testdb?serverTimezone=UTC/useSSL=false"</prop>
+            </props>
+        </property>
+    </bean>
+    <!--autowire来实现自动配置-->
+    <bean id="autowire" class="peson.Person" p:name="Lily" autowire="byName">
+    </bean>
+</beans>

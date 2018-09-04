@@ -1,0 +1,13 @@
+server:
+  port: 3344 #设置端口
+spring:
+  application:
+    name: config-server #设置名称
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Umikelgy/spring-cloud-dev.git #设置git仓库地址
+          searchPaths: untitled/
+      label: master
+      profile: dev
