@@ -5,7 +5,7 @@ eureka:
     fetch-registry: false
     register-with-eureka: false
 server:
-  port: 8888
+  port: 8188
 
 spring:
   cloud:
