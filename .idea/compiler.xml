@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="config_client" />
         <module name="config_git" />
+        <module name="config_server" />
         <module name="eureka_client" />
         <module name="eureka_server" />
         <module name="springIOC" />

@@ -16,4 +16,4 @@ spring:
           searchPaths: untitled
           force-pull: true
   application:
-    name: config-serve
+    name: config-server

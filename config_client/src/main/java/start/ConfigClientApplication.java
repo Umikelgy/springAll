@@ -1,34 +1,29 @@
 package start;
 
-/*
- *@author LgyTT@alog.com
- *@date 2018/8/20 17:07
- */
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+/*
+ *@descripion:
+ *
+ *@author 10068921(LgyTT)
+ *@date 2018/9/5 9:02
+ */
 @SpringBootApplication
+@EnableEurekaClient
 @RestController
 public class ConfigClientApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(ConfigClientApplication.class, args);
+    public static void main(String []args){
+        SpringApplication.run(ConfigClientApplication.class,args);
     }
-
-  //  @Value("${AC}")
-   // String hello;
-    @Value("${HSC}")
-    String hsc;
-    @RequestMapping(value = "/AC")
+    @Value("${server.port}")
+    String port;
+    @RequestMapping("/hello")
     public String hello(){
-        return "AC";
-    }
-    @RequestMapping(value = "/HSC")
-    public String HSC( ){
-        return hsc;
+        return "Hello word from port"+port;
     }
 }

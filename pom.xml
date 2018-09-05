@@ -14,6 +14,9 @@
         <module>eureka_client</module>
         <module>config_client</module>
         <module>config_git</module>
+        <module>config_server</module>
+        <module>config_client</module>
+        <module>eureka_client</module>
     </modules>
 
 
