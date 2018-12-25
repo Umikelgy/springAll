@@ -17,6 +17,7 @@
         <module>config_server</module>
         <module>config_client</module>
         <module>eureka_client</module>
+        <module>service_ribbon</module>
     </modules>
 
 

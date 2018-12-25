@@ -16,8 +16,10 @@ public class Hello_IOC {
         ApplicationContext act=new ClassPathXmlApplicationContext("beans.xml");
         Person person= (Person) act.getBean("autowire");
      List<Car> s =person.getCar();
-     for(Car c:s)
-     System.out.println("CC="+c);
+     for(Car c:s){
+         System.out.println("CC="+c);
+     }
+
      System.out.println("Arg="+person.getAge());
 
         DataSoure dataSoure= (DataSoure) act.getBean("datasoure");

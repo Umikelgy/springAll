@@ -17,6 +17,7 @@ public class Car {
         this.price = price;
     }
 
+    @Override
     public String toString(){
         return "car{"+"brand:"+brand
                 +"price:"+price+"corp:"+corp+"}" +
