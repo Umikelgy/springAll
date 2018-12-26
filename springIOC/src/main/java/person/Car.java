@@ -1,4 +1,4 @@
-package peson;
+package person;
 
 public class Car {
     private String brand;

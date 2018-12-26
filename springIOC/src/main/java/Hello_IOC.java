@@ -1,9 +1,9 @@
 import data.DataSoure;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import peson.Car;
-import peson.Person;
-import peson.SayH;
+import person.Car;
+import person.Person;
+import person.SayH;
 
 import java.util.List;
 
