@@ -7,7 +7,7 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
-/*
+/**
  *@description:
  *
  *@author 10068921(LgyTT)
@@ -21,7 +21,7 @@ public class ServiceRibbonApplication {
     }
     @Bean
     @LoadBalanced//注册表明，这个restTemplate需要负载均衡
-    RestTemplate restTemplate(){
+   public RestTemplate restTemplate(){
         return new RestTemplate();
     }
 }

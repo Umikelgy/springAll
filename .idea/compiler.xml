@@ -12,6 +12,7 @@
         <module name="eureka_client" />
         <module name="eureka_server" />
         <module name="service_ribbon" />
+        <module name="spring_boot" />
         <module name="springIOC" />
       </profile>
     </annotationProcessing>
