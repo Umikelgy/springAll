@@ -11,6 +11,6 @@ import org.springframework.boot.diagnostics.FailureAnalyzer;
 public class RibbonFailedAnalyzer implements FailureAnalyzer {
     @Override
     public FailureAnalysis analyze(Throwable throwable) {
-        return new FailureAnalysis("Ribbo Failed Message: ",throwable.getMessage(),throwable);
+        return new FailureAnalysis("Ribbon Failed Message: ",throwable.getMessage(),throwable);
     }
 }

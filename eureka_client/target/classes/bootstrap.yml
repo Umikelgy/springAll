@@ -14,7 +14,9 @@ spring:
     config:
       label: master
       profile: dev
-#      uri: http://localhost:8188/
+      uri: http://localhost:8188/
+      #无法解决spring cloud“上下文”启动（即，bootsrtrap.*-->config.*-->application.*)
+      #自动读取http://localhost:8888/路径，如果不设置uri，则读取默认！
       discovery:
         enabled: true
         serviceId: config-server
