@@ -11,3 +11,5 @@ spring:
           searchPaths: untitled/
       label: master
       profile: dev
+
+#      http://localhost:3344/config-server-test.properties,验证是否成功

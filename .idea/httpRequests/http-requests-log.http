@@ -1,3 +1,16 @@
+GET http://localhost:8080/beans.json
+Accept: application/vnd.spring-boot.actuator.v1+json
+
+<> 2018-12-29T043727.200.txt
+
+###
+
+GET http://localhost:8080/actuators
+
+<> 2018-12-29T043641.200.txt
+
+###
+
 GET http://localhost:8762
 
 <> 2018-09-04T032628.200.txt
