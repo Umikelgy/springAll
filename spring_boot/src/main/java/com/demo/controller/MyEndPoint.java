@@ -42,7 +42,6 @@ public class MyEndPoint implements Endpoint<MemInfo> {
                 .nowTime(LocalDateTime.now())
                 .maxMemory(runtime.maxMemory())
                 .totalMemory(runtime.totalMemory())
-                .build()
-                ;
+                .build();
     }
 }

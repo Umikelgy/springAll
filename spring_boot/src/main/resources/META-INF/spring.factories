@@ -1,1 +1,2 @@
 org.springframework.boot.diagnostics.FailureAnalyzer=com.demo.configuration.MyFailedAnalyzer
+management.endpoint.health.show-details= always

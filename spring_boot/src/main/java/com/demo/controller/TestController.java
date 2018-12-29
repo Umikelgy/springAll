@@ -14,7 +14,7 @@ public class TestController {
     public String tts(){
         return "Test-hot swapping  mkl";
     }
-    @RequestMapping("actuator")
+    @RequestMapping("actuators")
     public String helloActuator(){
         return "Hello Spring Boot Actuator";
     }
