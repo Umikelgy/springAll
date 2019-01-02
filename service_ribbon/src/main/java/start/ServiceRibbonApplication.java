@@ -19,8 +19,15 @@ public class ServiceRibbonApplication {
     public static void main(String[]args){
         SpringApplication.run(ServiceRibbonApplication.class,args);
     }
+    /**
+     *@description
+     * //注册表明，这个restTemplate需要负载均衡
+     *@param
+     *@return
+     *@anthor  10068921
+     */
     @Bean
-    @LoadBalanced//注册表明，这个restTemplate需要负载均衡
+    @LoadBalanced
    public RestTemplate restTemplate(){
         return new RestTemplate();
     }

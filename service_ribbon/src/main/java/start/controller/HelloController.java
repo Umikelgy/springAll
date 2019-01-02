@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import start.HelloService;
 
-/*
+/**
  *@description:
  *
  *@author 10068921(LgyTT)
